@@ -14,7 +14,7 @@
       perfect: 'images/perfect.jpg'   // 올 정답 : 100점
     },
     streakMin: 2,                     // 몇 문제 연속으로 맞히면 연속 정답 사진을 보여줄지
-    showExplanationOnCorrect: false,  // true 로 바꾸면 정답일 때도 문제풀이를 보여줌
+    showExplanationOnCorrect: true,  // true 로 바꾸면 정답일 때도 문제풀이를 보여줌
     defaultCount: '20'
   };
 
