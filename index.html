@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>화학 영역 시험</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+
+    <!-- ① 시작 화면 -->
+    <section id="screen-start" class="screen active">
+      <div class="banner">
+        <span class="banner-small">2학년 화학Ⅱ</span>
+        <h1>정답을 맞혀라!</h1>
+        <p class="banner-sub">화학 영역 &middot; 홀수형</p>
+      </div>
+
+      <article class="paper">
+        <header class="paper-head"><span class="paper-title">화학 영역</span><span class="paper-type">홀수형</span></header>
+        <p class="lead">엔탈피 &middot; 헤스 법칙 &middot; 엔트로피 &middot; 반응 속도 &middot; 활성화 에너지 &middot; 촉매</p>
+
+        <h3 class="opt-title">시험 유형</h3>
+        <div class="chips" id="opt-mode">
+          <button class="chip active" data-value="all">O/X + 객관식</button>
+          <button class="chip" data-value="ox">O/X만</button>
+          <button class="chip" data-value="mc">객관식만</button>
+        </div>
+
+        <h3 class="opt-title">문항 수</h3>
+        <div class="chips" id="opt-count">
+          <button class="chip" data-value="10">10문제</button>
+          <button class="chip active" data-value="20">20문제</button>
+          <button class="chip" data-value="all">전체</button>
+        </div>
+
+        <ul class="rules">
+          <li><b>정답</b> &rarr; 정답 사진!</li>
+          <li><b>오답</b> &rarr; 정답 같은 오답 + 문제풀이</li>
+          <li><b>2연속 이상 정답</b> &rarr; 맞힐 때마다 기적의 정답 퍼레이드!</li>
+          <li><b>올 정답</b> &rarr; 100점의 주인공!</li>
+        </ul>
+
+        <button id="btn-start" class="btn btn-primary btn-big">시험 시작!</button>
+      </article>
+    </section>
+
+    <!-- ② 문제 화면 -->
+    <section id="screen-quiz" class="screen">
+      <div class="hud">
+        <div id="hud-progress" class="hud-item"></div>
+        <div id="hud-streak" class="hud-item hud-streak"></div>
+        <div id="hud-score" class="hud-item"></div>
+      </div>
+      <div class="progress"><div id="progress-bar"></div></div>
+
+      <article class="paper">
+        <header class="paper-head"><span class="paper-title">화학 영역</span><span class="paper-type">홀수형</span></header>
+        <div class="q-meta">
+          <span id="q-no" class="q-no"></span>
+          <span id="q-tag" class="tag"></span>
+          <span id="q-lesson" class="tag tag-light"></span>
+        </div>
+        <div id="q-text" class="q-text"></div>
+        <div id="q-choices" class="choices"></div>
+
+        <div id="feedback" class="feedback hidden" aria-live="polite">
+          <div id="fb-stamp" class="stamp"></div>
+          <img id="fb-img" alt="">
+          <div id="fb-explain" class="explain hidden"></div>
+          <button id="btn-next" class="btn btn-primary"></button>
+        </div>
+      </article>
+    </section>
+
+    <!-- ③ 결과 화면 -->
+    <section id="screen-result" class="screen">
+      <article class="paper result-paper">
+        <header class="paper-head"><span class="paper-title" id="res-title">채점 결과</span><span class="paper-type">홀수형</span></header>
+        <div id="res-score" class="res-score"></div>
+        <p id="res-msg" class="res-msg"></p>
+        <img id="res-img" class="res-img hidden" alt="">
+        <p id="res-detail" class="res-detail"></p>
+
+        <div id="res-review" class="review hidden">
+          <h3>틀린 문제 다시 보기</h3>
+          <div id="res-review-list"></div>
+        </div>
+
+        <div class="btn-row">
+          <button id="btn-retry" class="btn btn-primary">다시 도전</button>
+          <button id="btn-retry-wrong" class="btn btn-accent hidden">틀린 문제만 다시</button>
+          <button id="btn-home" class="btn btn-ghost">처음으로</button>
+        </div>
+      </article>
+    </section>
+
+  </main>
+
+  <script src="questions.js"></script>
+  <script src="images.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
